@@ -1,9 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 import Home from "./Components/Home/Home";
-import Contact from "./Components/Electronic/Electronic";
-import Jewelry from "./Components/Jewelry/Jewelry";
-import Electronic from "./Components/Electronic/Electronic";
+import Products from "./Components/Products/Products";
 
 function App() {
   return (
@@ -16,18 +14,18 @@ function App() {
                 <Link to="/" className="nav-link">Home</Link>
               </li>
               <li className="nav-item">
-                <Link to="/about" className="nav-link">Jewelry</Link>
+                <Link to="/Jewelry" className="nav-link">Jewelry</Link>
               </li>
               <li className="nav-item">
-                <Link to="/contact" className="nav-link">Electronic</Link>
+                <Link to="/Electronic" className="nav-link">Electronic</Link>
               </li>
             </ul>
           </nav>
           
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<Jewelry />} />
-            <Route path="/contact" element={<Electronic />} />
+            <Route path="/Jewelry" element={<Products type="Jewelery" />} />
+            <Route path="/Electronic" element={<Products type="Eelectronic" />} />
           </Routes>
         </div>
       </Router>

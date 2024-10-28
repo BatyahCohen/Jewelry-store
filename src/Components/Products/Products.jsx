@@ -1,20 +1,23 @@
 import { useEffect, useState } from "react";
-import styles from "./Electronic.module.css";
+import styles from "./Products.module.css";
+import { getJewelery } from "../../Services/Store";
 import { getElectronics } from "../../Services/Store";
 
-const Electronic = () => {
+const Products = ({ type }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    getElectronics()
+    let getProducts = type == "Jewelery" ? getJewelery : getElectronics;
+
+    getProducts()
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
       });
-  }, []);
+  }, [products]);
 
   return (
-    <div className={styles.electronic}>
+    <div className={styles.Products}>
       {products.map((p, index) => (
         <div key={index} className={styles.card}>
           <h2 className={styles.title}>{p.title}</h2>
@@ -26,5 +29,4 @@ const Electronic = () => {
     </div>
   );
 };
-export default Electronic;
-
+export default Products;
