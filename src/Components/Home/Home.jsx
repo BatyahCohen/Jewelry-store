@@ -1,7 +1,11 @@
-import styles from "./Home.module.css"
+import styles from "./Home.module.css";
 
-const Home=()=>{
+const Home = () => {
+  return (
+    <div className={styles.home}>
+      <h1 className={styles.welcomeText}>Welcome to Our Store</h1>
+    </div>
+  );
+};
 
-    return <div className={styles.home}>Home</div>
-}
-export default Home
+export default Home;

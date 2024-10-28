@@ -1,6 +1,5 @@
 import "./App.css";
-import { useState } from "react";
-import {BrowserRouter as Router, Link, Route,  Routes } from "react-router-dom";
+import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 import Home from "./Components/Home/Home";
 import Contact from "./Components/Electronic/Electronic";
 import Jewelry from "./Components/Jewelry/Jewelry";
@@ -11,23 +10,23 @@ function App() {
     <div className="main-container">
       <Router>
         <div className="App">
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
+          <nav className="navbar">
+            <ul className="nav-list">
+              <li className="nav-item">
+                <Link to="/" className="nav-link">Home</Link>
               </li>
-              <li>
-                <Link to="/about">Jewerly</Link>
+              <li className="nav-item">
+                <Link to="/about" className="nav-link">Jewelry</Link>
               </li>
-              <li>
-                <Link to="/contact">Electronic</Link>
+              <li className="nav-item">
+                <Link to="/contact" className="nav-link">Electronic</Link>
               </li>
             </ul>
           </nav>
           
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<Jewelry/>} />
+            <Route path="/about" element={<Jewelry />} />
             <Route path="/contact" element={<Electronic />} />
           </Routes>
         </div>
@@ -35,4 +34,5 @@ function App() {
     </div>
   );
 }
+
 export default App;
