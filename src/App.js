@@ -24,8 +24,8 @@ function App() {
           
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/Jewelry" element={<Products type="Jewelery" />} />
-            <Route path="/Electronic" element={<Products type="Eelectronic" />} />
+            <Route path="/Jewelry" element={<Products type="jewelery" />} />
+            <Route path="/Electronic" element={<Products type="electronics" />} />
           </Routes>
         </div>
       </Router>

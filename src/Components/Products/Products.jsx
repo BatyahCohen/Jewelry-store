@@ -1,20 +1,22 @@
 import { useEffect, useState } from "react";
 import styles from "./Products.module.css";
-import { getJewelery } from "../../Services/Store";
-import { getElectronics } from "../../Services/Store";
+import { getProducts } from "../../Services/utils";
 
 const Products = ({ type }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    let getProducts = type == "Jewelery" ? getJewelery : getElectronics;
+    const fetchProducts = async () => {
+      const p = await getProducts(type);
+      setProducts(p);
+    };
 
-    getProducts()
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data);
-      });
-  }, [products]);
+    fetchProducts();
+  }, [type]);
+
+  if (products === null) {
+    return <div>loading...</div>; 
+  }
 
   return (
     <div className={styles.Products}>
