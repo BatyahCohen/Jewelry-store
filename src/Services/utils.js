@@ -4,7 +4,7 @@ export async function getProducts(type) {
   let products=[]
   let now = new Date();
 
-  let productTime = localStorage.getItem(type+"UpdateTime");
+  let productTime = new Date(JSON.parse(localStorage.getItem(type + "UpdateTime")));
 
   if (productTime == null || (now - productTime) / (1000 * 60) > 1) {
     console.log("havnt local storage!:   ")

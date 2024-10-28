@@ -19,6 +19,9 @@ function App() {
               <li className="nav-item">
                 <Link to="/Electronic" className="nav-link">Electronic</Link>
               </li>
+              <li className="nav-item">
+                <Link to="/Books" className="nav-link">Books</Link>
+              </li>
             </ul>
           </nav>
           
@@ -26,6 +29,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/Jewelry" element={<Products type="jewelery" />} />
             <Route path="/Electronic" element={<Products type="electronics" />} />
+            <Route path="/Books" element={<Products type="books" />} />
           </Routes>
         </div>
       </Router>
